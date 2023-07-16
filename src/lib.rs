@@ -1,5 +1,15 @@
 use std::{env, error::Error, fs};
 
+/// Read the file according to the `config.file_path` and look for the lines according to the `config.query`.
+///
+/// You can set the IGNORE_CASE environment variable to make the search case-insensitive.
+///
+/// # Examples
+/// ```
+/// let args = vec![String::from("any"), String::from("dreary"), String::from("poetry.txt")].into_iter();
+/// let config = minigrep::Config::build(args).unwrap();
+/// minigrep::run(config).unwrap();
+/// ```
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents: String = fs::read_to_string(config.file_path)?;
 
