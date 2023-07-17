@@ -10,8 +10,18 @@ Si está interesado en aprender Rust, o si simplemente quiere ver mi trabajo, ¡
 
 Para usar el proyecto, simplemente ejecute el siguiente comando en la terminal:
 
-`cargo run <cadena> <archivo>`
+```bash
+cargo run -- <cadena> <archivo>
+```
 
 Por ejemplo, para buscar la cadena "hola" en el archivo "archivo.txt", ejecutaría el siguiente comando:
 
-`cargo run hola archivo.txt`
+```bash
+cargo run -- hola archivo.txt
+```
+
+Si quiere ignorar las mayúsculas, ejecutará el siguiente comando:
+
+```bash
+cargo run -- HoLa archivo.txt --ignore-case
+```
