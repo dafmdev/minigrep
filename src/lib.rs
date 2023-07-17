@@ -1,3 +1,5 @@
+//! # MiniGrep
+//! It is a personal project guided by Rust's book.
 use std::{env, error::Error, fs};
 
 /// Read the file according to the `config.file_path` and look for the lines according to the `config.query`.
