@@ -63,7 +63,10 @@ impl Config {
             None => return Err("Didn't get a file path"),
         };
 
-        let ignore_case = env::var("IGNORE_CASE").is_ok();
+        let ignore_case = match args.next() {
+            Some(_) => true,
+            None => env::var("IGNORE_CASE").is_ok(),
+        };
 
         Ok(Config {
             query,
