@@ -64,7 +64,14 @@ impl Config {
         };
 
         let ignore_case = match args.next() {
-            Some(_) => true,
+            Some(ignore_case) => {
+                if ignore_case == String::from("--ignore-case") || ignore_case == String::from("-i")
+                {
+                    true
+                } else {
+                    false
+                }
+            }
             None => env::var("IGNORE_CASE").is_ok(),
         };
 
